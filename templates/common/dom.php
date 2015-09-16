@@ -42,6 +42,8 @@
 	<title><?php echo !empty($pagetitle) ? $pagetitle : Config::getPageTitle(); ?></title>
 </head>
 <body>
+<?php echo Lib::output('common/menu', array('viewname' => $viewname, 'slug' => !empty($slug) ? $slug : '')); ?>
+<?php echo Lib::output('common/header', array('pagetitle' => !empty($pagetitle) ? $pagetitle : Config::getPageTitle())); ?>
 <div class="wrapper">
 <?php echo $body; ?>
 </div>
