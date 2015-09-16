@@ -3,14 +3,14 @@
 
 class Config
 {
-	public static $dbenv = 'production';
+	public static $dbenv = 'development';
 	public static $dbconfig = array(
 		'default' => array(
 			'development' => array(
 				'server' => 'localhost',
 				'username' => 'root',
-				'password' => 'base64_encode',
-				'database' => ''
+				'password' => 'cGFzc3dvcmQ=',
+				'database' => 'jsonobject'
 			),
 			'production' => array(
 				'server' => 'localhost',
@@ -20,7 +20,7 @@ class Config
 			)
 		)
 	);
-	public static $env = 'production';
+	public static $env = 'development';
 	public static $sef = true;
 	public static $base = '';
 	public static $pagetitle = 'Lab | Concepts | Experiments';
