@@ -1,0 +1,42 @@
+@import 'colors';
+
+#hamburger {
+	.hamburger-items {
+		.hamburger-menu {
+			position: relative;
+			display: inline-block;
+			width: 48px;
+			height: 48px;
+			margin: 12px;
+			cursor: pointer;
+
+			.hamburger-menu-lines {
+				position: absolute;
+				width: 100%;
+				top: 23px;
+
+				&::before, &::after, .hamburger-menu-line {
+					height: 2px;
+					width: 100%;
+					background-color: @red500;
+					display: block;
+				}
+
+				&::before, &::after {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+
+				&::before {
+					transform: translateY(-12px);
+				}
+
+				&::after {
+					transform: translateY(12px);
+				}
+			}
+		}
+	}
+}
