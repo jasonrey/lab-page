@@ -1,16 +1,16 @@
-"use strict"
+'use strict'
 
 $ ->
 	$window = $ window
-	$body = $ "body"
-	$menuButton = $ ".menu-button"
-	$menuOverlay = $ ".menu-overlay"
+	$body = $ 'body'
+	$menuButton = $ '.menu-button'
+	$menuOverlay = $ '.menu-overlay'
 
-	$menuButton.on "click", ->
-		$body.toggleClass "show-menu"
+	$menuButton.on 'click', ->
+		$body.toggleClass 'show-menu'
 
-	$menuOverlay.on "click", ->
-		$body.removeClass "show-menu"
+	$menuOverlay.on 'click', ->
+		$body.removeClass 'show-menu'
 
 	headerShrinkImplemented = false
 	headerShrinkHandler = (ev) ->
@@ -30,3 +30,9 @@ $ ->
 				$body.removeClass 'shrink-header'
 				headerShrinkImplemented = false
 				$window.off 'scroll', headerShrinkHandler
+
+	$body.on 'click', '[data-event="click"]', (ev) ->
+		button = $ this
+		classname = button.data 'toggle'
+
+		button.toggleClass classname
