@@ -1,9 +1,10 @@
-[{
-	"slug": "hamburger",
-	"title": "Hamburger",
-	"date": "2015-08-24"
-}, {
-	"slug": "svg-loader",
-	"title": "SVG Loader",
-	"date": "2015-09-10"
-}]
+{
+	"svg-loader": {
+		"title": "SVG Loader",
+		"date": "2015-09-10"
+	},
+	"hamburger": {
+		"title": "Hamburger",
+		"date": "2015-08-24"
+	}
+}

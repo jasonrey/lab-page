@@ -4,8 +4,8 @@
 <div class="main">
 	<div class="container">
 		<div class="posts">
-			<?php foreach (array_reverse($page->getPages()) as $post) {
-				echo $this->loadTemplate('post', array('post' => $post, 'page' => $page));
+			<?php foreach ($pages as $pageslug => $page) {
+				echo $this->loadTemplate('post', array('post' => $page, 'pageslug' => $pageslug, 'pageview' => $pageview));
 			} ?>
 		</div>
 	</div>
