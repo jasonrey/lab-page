@@ -27,8 +27,13 @@ class PageView extends View
 
 		$this->set('slug', $slug);
 
-		$this->css[] = $slug;
-		$this->js[] = $slug;
+		if (file_exists(Config::getBasePath() . '/assets/css/' . $slug . '.' . (Config::env() === 'development' ? 'less' : 'css'))) {
+			$this->css[] = $slug;
+		}
+
+		if (file_exists(Config::getBasePath() . '/assets/js/' . $slug . '.' . (Config::env() === 'development' ? 'coffee' : 'js'))) {
+			$this->js[] = $slug;
+		}
 
 		$page = $this->getPages()->$slug;
 
