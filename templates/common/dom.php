@@ -43,7 +43,7 @@
 </head>
 <body>
 <?php echo Lib::output('common/menu', array('viewname' => $viewname, 'slug' => !empty($slug) ? $slug : '')); ?>
-<?php echo Lib::output('common/header', array('pagetitle' => !empty($pagetitle) ? $pagetitle : Config::getPageTitle())); ?>
+<?php echo Lib::output('common/header', array('pagetitle' => !empty($pagetitle) ? $pagetitle : Config::getPageTitle(), 'pagedate' => !empty($pagedate) ? $pagedate : null)); ?>
 <div class="wrapper">
 <?php echo $body; ?>
 </div>

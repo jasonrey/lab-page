@@ -39,6 +39,7 @@ class PageView extends View
 
 		$this->set('page', $page);
 		$this->set('pagetitle', $page->title);
+		$this->set('pagedate', $page->date);
 
 		$content = $this->loadTemplate($slug . '/content');
 

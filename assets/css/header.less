@@ -41,6 +41,30 @@
 		}
 	}
 
+	h2 {
+		font-size: 18px;
+		color: rgba(255, 255, 255, 0.7);
+		margin: 0 0 8px 0;
+
+		.shrink-header & {
+			position: absolute;
+			right: 16px;
+			top: 0;
+			bottom: 0;
+			line-height: 64px;
+			font-size: 14px;
+		}
+
+		@media (max-height: 750px) {
+			position: absolute;
+			right: 16px;
+			top: 0;
+			bottom: 0;
+			line-height: 64px;
+			font-size: 14px;
+		}
+	}
+
 	h1 {
 		margin: 0;
 		color: @white;
