@@ -3,6 +3,9 @@
 
 class PageView extends View
 {
+	public $css = array();
+	public $js = array();
+
 	public function getPages()
 	{
 		static $posts;
@@ -23,5 +26,17 @@ class PageView extends View
 		$slug = Req::get('slug');
 
 		$this->set('slug', $slug);
+
+		$this->css[] = $slug;
+		$this->js[] = $slug;
+
+		$page = $this->getPages()->$slug;
+
+		$this->set('page', $page);
+		$this->set('pagetitle', $page->title);
+
+		$content = $this->loadTemplate($slug . '/content');
+
+		$this->set('content', $content);
 	}
 }
