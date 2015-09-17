@@ -43,7 +43,9 @@
 </head>
 <body>
 <?php echo Lib::output('common/menu', array('viewname' => $viewname, 'slug' => !empty($slug) ? $slug : '')); ?>
+<?php if (empty($hideHeader)) { ?>
 <?php echo Lib::output('common/header', array('pagetitle' => !empty($pagetitle) ? $pagetitle : Config::getPageTitle(), 'pagesubtitle' => !empty($pagedate) ? $pagedate : 'jsonobject.io')); ?>
+<?php } ?>
 <div class="wrapper">
 <?php echo $body; ?>
 </div>
