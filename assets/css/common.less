@@ -9,34 +9,40 @@ body {
 }
 
 .main {
-	margin: 32px 0 32px 0;
-
 	@media (min-width: 1660px) {
-		margin: 32px 0 32px 220px;
+		margin: 0 0 0 220px;
 	}
 
 	@media (max-height: 750px) {
-		margin: 96px 0 32px 0;
+		margin: 64px 0 0 0;
 
 		@media (min-width: 1660px) {
-			margin: 96px 0 32px 220px;
+			margin: 64px 0 0 220px;
 		}
 	}
 
 	.shrink-header & {
-		margin: 222px 0 32px 0;
+		margin: 190px 0 0 0;
 
 		@media (min-width: 1660px) {
-			margin: 222px 0 32px 220px;
+			margin: 190px 0 0 220px;
 		}
+	}
+
+	&.page {
+		padding: 32px 0;
 	}
 }
 
 .post {
-	margin: 32px 0;
-	padding: 24px;
-	border-radius: 2px;
-	box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+	// margin: 32px 0;
+	padding: 56px 24px;
+	// border-radius: 2px;
+	// box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+
+	&:nth-child(odd) {
+		background-color: @grey100;
+	}
 
 	h2 {
 		font-weight: 500;
