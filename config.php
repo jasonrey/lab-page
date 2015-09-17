@@ -3,7 +3,7 @@
 
 class Config
 {
-	public static $dbenv = 'development';
+	public static $dbenv = 'production';
 	public static $dbconfig = array(
 		'default' => array(
 			'development' => array(
@@ -20,9 +20,9 @@ class Config
 			)
 		)
 	);
-	public static $env = 'development';
+	public static $env = 'production';
 	public static $sef = true;
-	public static $base = 'git/lab-page';
+	public static $base = '';
 	public static $pagetitle = 'Lab | Concepts | Experiments';
 
 	// Unique key to identify admin session
