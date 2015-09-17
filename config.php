@@ -23,7 +23,7 @@ class Config
 	public static $env = 'development';
 	public static $sef = true;
 	public static $base = 'git/lab-page';
-	public static $pagetitle = 'Lab | Concepts | Experiments';
+	public static $pagetitle = 'Lab | Concepts';
 
 	// Unique key to identify admin session
 	// This key will be hashed to use as cookie key
