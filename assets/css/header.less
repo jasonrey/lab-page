@@ -1,0 +1,103 @@
+@import 'colors';
+@import 'library';
+
+.header {
+	background-color: @red500;
+	z-index: 1;
+	height: 190px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	position: relative;
+
+	.shrink-header & {
+		position: fixed;
+		top: 0;
+		height: 64px;
+		width: 100%;
+	}
+
+	@media (max-height: 750px) {
+		position: fixed;
+		top: 0;
+		height: 64px;
+		width: 100%;
+	}
+
+	@media (min-width: 1660px) {
+		margin: 0 0 0 220px;
+	}
+
+	.page-title {
+		position: absolute;
+		bottom: 36px;
+		width: 100%;
+
+		.shrink-header & {
+			bottom: 0;
+		}
+
+		@media (max-height: 750px) {
+			bottom: 0;
+		}
+	}
+
+	h2 {
+		font-size: 18px;
+		color: rgba(255, 255, 255, 0.7);
+		margin: 0 0 8px 0;
+
+		.shrink-header & {
+			position: absolute;
+			right: 16px;
+			top: 0;
+			bottom: 0;
+			line-height: 64px;
+			font-size: 14px;
+		}
+
+		@media (max-height: 750px) {
+			position: absolute;
+			right: 16px;
+			top: 0;
+			bottom: 0;
+			line-height: 64px;
+			font-size: 14px;
+		}
+	}
+
+	h1 {
+		margin: 0;
+		color: @white;
+		font-size: 48px;
+		font-weight: 400;
+		transition: font-size .3s, line-height .3s;
+
+		@media (max-height: 750px) {
+			padding: 0;
+			font-size: 24px;
+			line-height: 64px;
+		}
+
+		@media (max-width: 760px) {
+			font-size: 42px;
+		}
+
+		@media (max-width: 680px) {
+			font-size: 36px;
+		}
+
+		@media (max-width: 600px) {
+			font-size: 30px;
+		}
+
+		@media (max-width: 520px) {
+			font-size: 24px;
+		}
+
+		.shrink-header & {
+			padding: 0;
+			font-size: 24px;
+			line-height: 64px;
+		}
+	}
+}

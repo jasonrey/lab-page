@@ -1,0 +1,205 @@
+@import 'colors';
+
+.menu-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: @black;
+	visibility: hidden;
+	opacity: 0;
+	transition-property: opacity, visibility;
+	transition-duration: .4s;
+	z-index: 2;
+
+	.show-menu & {
+		visibility: visible;
+		opacity: 0.5;
+	}
+
+	@media (min-width: 1660px) {
+		display: none;
+	}
+}
+
+.menu {
+	position: fixed;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 220px;
+	height: 100%;
+	transition-property: transform, background-color, box-shadow;
+	transition-duration: .4s;
+	transform: translateX(-156px);
+
+	@media (min-width: 1660px) {
+		transform: translateX(0);
+		background-color: @white;
+		box-shadow: 1px 0 4px rgba(0, 0, 0, 0.2);
+	}
+
+	.show-menu & {
+		z-index: 2;
+		background-color: @white;
+		box-shadow: 1px 0 4px rgba(0, 0, 0, 0.2);
+		transform: translateX(0);
+	}
+
+	.menu-header {
+		position: fixed;
+		height: 64px;
+		width: 220px;
+
+		.menu-button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 64px;
+			height: 64px;
+			cursor: pointer;
+
+			.menu-button-line {
+				display: block;
+				position: absolute;
+				top: 31px;
+				left: 23px;
+				width: 18px;
+				height: 1px;
+				transition: transform .4s;
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 18px;
+					height: 1px;
+					background-color: @grey300;
+					transition-property: background-color, transform;
+					transition-duration: .4s, .4s;
+
+					.show-menu & {
+						background-color: @grey500;
+					}
+
+					@media (min-width: 1660px) {
+						background-color: @grey500;
+					}
+				}
+
+				&.line-top {
+					transform: translateY(-5px);
+
+					@media (max-width: 1659px) {
+						.show-menu & {
+							transform: translateY(0);
+
+							&::after {
+								transform: rotate(45deg);
+							}
+						}
+					}
+				}
+
+				&.line-middle {
+					transition-property: background-color, opacity;
+					transition-duration: .4s, .4s;
+
+					@media (max-width: 1659px) {
+						.show-menu & {
+							opacity: 0;
+						}
+					}
+				}
+
+				&.line-bottom {
+					transform: translateY(5px);
+
+					@media (max-width: 1659px) {
+						.show-menu & {
+							transform: translateY(0);
+
+							&::after {
+								transform: rotate(-45deg);
+							}
+						}
+					}
+				}
+			}
+
+			&:hover {
+				.menu-button-line {
+					&::after {
+						background-color: @white;
+
+						.show-menu & {
+							background-color: @grey900;
+						}
+
+						@media (min-width: 1660px) {
+							background-color: @grey900;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.menu-items {
+		overflow-x: hidden;
+		overflow-y: auto;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		position: absolute;
+		top: 64px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity .4s, visibility .4s;
+
+		.show-menu & {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		@media (min-width: 1660px) {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.menu-item {
+			&.menu-item-index {
+				padding: 0 0 12px 0;
+				margin: 0 0 12px 0;
+				border-bottom: 1px solid @grey300;
+			}
+
+			.menu-item-link {
+				padding: 15px 0 15px 22px;
+				display: block;
+				font-weight: 300;
+				transition: background-color .2s;
+
+				&:hover {
+					background-color: @grey100;
+				}
+
+				&.active {
+					color: @white;
+					background-color: @red700;
+					font-weight: 500;
+
+					&:hover {
+						background-color: @red500;
+					}
+				}
+			}
+		}
+	}
+}

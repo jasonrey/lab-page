@@ -3,7 +3,7 @@
 
 class IndexRouter extends Router
 {
-	public function build(&$options)
+	public function build($options = array())
 	{
 		return '';
 	}

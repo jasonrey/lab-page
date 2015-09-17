@@ -1,0 +1,114 @@
+@import 'colors';
+
+#svg-loader {
+	.svg-loader-frame {
+		text-align: center;
+
+		@keyframes loader-1 {
+			0% {
+				transform: scale(0);
+				opacity: 1;
+			}
+
+			80% {
+				transform: scale(1);
+				opacity: 0;
+			}
+		}
+
+		@keyframes loader-2-a {
+			0% {
+				transform: scale(0);
+				opacity: 1;
+			}
+
+			50% {
+				transform: scale(1);
+				opacity: 1;
+			}
+
+			75% {
+				transform: scale(1);
+				opacity: 0;
+			}
+
+			100% {
+				transform: scale(1);
+				opacity: 0;
+			}
+		}
+
+		@keyframes loader-2-b {
+			0% {
+				transform: scale(0);
+				opacity: 1;
+			}
+
+			25% {
+				transform: scale(0);
+				opacity: 1;
+			}
+
+			75% {
+				transform: scale(1);
+				opacity: 1;
+			}
+
+			100% {
+				transform: scale(1);
+				opacity: 0;
+			}
+		}
+
+		.svg-loader {
+			display: inline-block;
+			position: relative;
+			width: 52px;
+			height: 45px;
+
+			.svg-loader-item {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				opacity: 0;
+				transform: scale(0);
+				transform-origin: 50% 70%;
+				animation-duration: 1.5s;
+				animation-iteration-count: infinite;
+			}
+		}
+
+		.svg-loader-type-1 {
+			.svg-loader-item {
+				animation-name: loader-1;
+
+				&.svg-loader-item-1 {
+					stroke-width: 1;
+					stroke: @red500;
+					fill: @white;
+				}
+
+				&.svg-loader-item-2 {
+					fill: @red500;
+					animation-delay: .3s;
+				}
+			}
+		}
+
+		.svg-loader-type-2 {
+			.svg-loader-item {
+				&.svg-loader-item-1 {
+					fill: @red500;
+					animation-name: loader-2-a;
+				}
+
+				&.svg-loader-item-2 {
+					fill: @white;
+					animation-name: loader-2-b;
+				}
+			}
+		}
+	}
+}

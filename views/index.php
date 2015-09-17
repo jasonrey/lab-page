@@ -7,8 +7,10 @@ class IndexView extends View
 
 	public function main()
 	{
-		$page = Lib::view('page');
+		$pageview = Lib::view('page');
+		$pages = $pageview->getPages();
 
-		$this->set('page', $page);
+		$this->set('pageview', $pageview);
+		$this->set('pages', $pages);
 	}
 }
