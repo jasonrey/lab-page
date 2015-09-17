@@ -31,6 +31,19 @@ $ ->
 				headerShrinkImplemented = false
 				$window.off 'scroll', headerShrinkHandler
 
+	$body.on 'click', '.sample-type', (ev) ->
+		tab = $ this
+		frame = tab.parents '.sample-codes'
+		tabs = frame.find '.sample-type'
+		index = tabs.index tab
+		contents = frame.find '.sample-content'
+		content = contents.eq index
+
+		tabs.removeClass 'active'
+		contents.removeClass 'active'
+		tab.addClass 'active'
+		content.addClass 'active'
+
 	$body.on 'click', '[data-event="click"]', (ev) ->
 		button = $ this
 		classname = button.data 'toggle'

@@ -24,15 +24,25 @@
 </div>
 
 <div class="sample-codes">
-	<h4 class="sample-code-type">HTML</h4>
-	<pre data-language="html"><?php echo $this->loadTemplate('svg-loader/codes/html'); ?></pre>
+	<div class="sample-types">
+		<div class="sample-type active"><h4 class="sample-code-type">HTML</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">CSS - Base</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">CSS - Type 1</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">CSS - Type 2</h4></div>
+	</div>
 
-	<h4 class="sample-code-type">CSS - Base</h4>
-	<pre data-language="css"><?php echo $this->loadTemplate('svg-loader/codes/css-base'); ?></pre>
-
-	<h4 class="sample-code-type">CSS - Type 1</h4>
-	<pre data-language="css"><?php echo $this->loadTemplate('svg-loader/codes/css-type-1'); ?></pre>
-
-	<h4 class="sample-code-type">CSS - Type 2</h4>
-	<pre data-language="css"><?php echo $this->loadTemplate('svg-loader/codes/css-type-2'); ?></pre>
+	<div class="sample-contents">
+		<div class="sample-content active">
+			<pre data-language="html"><?php echo $this->loadTemplate('svg-loader/codes/html'); ?></pre>
+		</div>
+		<div class="sample-content">
+			<pre data-language="css"><?php echo $this->loadTemplate('svg-loader/codes/css-base'); ?></pre>
+		</div>
+		<div class="sample-content">
+			<pre data-language="css"><?php echo $this->loadTemplate('svg-loader/codes/css-type-1'); ?></pre>
+		</div>
+		<div class="sample-content">
+			<pre data-language="css"><?php echo $this->loadTemplate('svg-loader/codes/css-type-2'); ?></pre>
+		</div>
+	</div>
 </div>
