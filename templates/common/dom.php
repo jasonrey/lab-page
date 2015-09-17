@@ -9,6 +9,8 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui" />
 
+	<link href="assets/css/fonticon.mod.css" media="all" rel="stylesheet" type="text/css" />
+
 	<link href="assets/css/rainbow-github.css" rel="stylesheet" type="text/css" />
 	<script src="assets/js/rainbow.min.js" type="text/javascript"></script>
 
