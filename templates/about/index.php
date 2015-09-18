@@ -25,6 +25,17 @@
 					<a href="#" class="social-link"><i class="icon icon-linkedin"></i></a>
 					<a href="#" class="social-link"><i class="icon icon-github"></i></a>
 				</div>
+
+				<div class="latest-tweet-frame">
+					<div class="latest-tweet">
+						<p class="tweet-content"><?php echo $tweet->text; ?></p>
+						<div class="tweet-meta">
+							<a href="https://twitter.com/<?php echo $tweet->user->screen_name; ?>" target="_blank" class="tweet-user">@</a>
+							<span class="separator">|</span>
+							<a href="https://twitter.com/<?php echo $tweet->user->screen_name; ?>/status/<?php echo $tweet->id; ?>" target="_blank" class="tweet-date"><?php echo date_create($tweet->created_at)->format('d M Y'); ?></a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
