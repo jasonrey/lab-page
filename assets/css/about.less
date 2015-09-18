@@ -1,10 +1,17 @@
 @import 'colors';
 
-body {
+.background-color(@color, @angle: 90deg) when (@color = 'red') {
 	background-color: @red500;
-	background: linear-gradient(90deg, @red400, @red600);
-	// background-color: @bluegrey500;
-	// background: linear-gradient(90deg, @bluegrey600, @bluegrey400);
+	background: linear-gradient(@angle, @red300 0%, @red400 30%, @red600 70%, @red700 100%);
+}
+
+.background-color(@color, @angle: 90deg) when (@color = 'grey') {
+	background-color: @bluegrey500;
+	background: linear-gradient(@angle, @bluegrey300, @bluegrey400, @bluegrey600, @bluegrey700);
+}
+
+body {
+	.background-color('grey');
 }
 
 #about {
@@ -14,11 +21,8 @@ body {
 	}
 
 	.section-header {
+		.background-color('red', -135deg);
 		height: 420px;
-		// background-color: @red500;
-		// background: linear-gradient(90deg, @red400, @red600);
-		background-color: @bluegrey500;
-		background: linear-gradient(90deg, @bluegrey600, @bluegrey400);
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 		text-align: center;
 		z-index: 1;
@@ -68,6 +72,8 @@ body {
 	}
 
 	.section-intro {
+		.background-color('grey', -45deg);
+
 		.section-content {
 			padding: 144px 0;
 			position: relative;
@@ -167,8 +173,7 @@ body {
 	}
 
 	.section-intro-2 {
-		background-color: @bluegrey500;
-		background: linear-gradient(90deg, @bluegrey600, @bluegrey400);
+		.background-color('red', -45deg);
 		text-align: center;
 		z-index: 1;
 
