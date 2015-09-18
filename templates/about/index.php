@@ -20,10 +20,10 @@
 				<h3 class="name">Jason Rey</h3>
 				<h4 class="subtitle">A developer at heart, with a touch of musician.</h4>
 				<div class="social-links">
-					<a href="#" class="social-link"><i class="icon icon-facebook"></i></a>
-					<a href="#" class="social-link"><i class="icon icon-twitter"></i></a>
-					<a href="#" class="social-link"><i class="icon icon-linkedin"></i></a>
-					<a href="#" class="social-link"><i class="icon icon-github"></i></a>
+					<a href="https://www.facebook.com/jasonkeorey" class="social-link" target="_blank"><i class="icon icon-facebook"></i></a>
+					<a href="https://twitter.com/jasonkeorey" class="social-link" target="_blank"><i class="icon icon-twitter"></i></a>
+					<a href="https://my.linkedin.com/in/jasonrey" class="social-link" target="_blank"><i class="icon icon-linkedin"></i></a>
+					<a href="https://github.com/jasonrey" class="social-link" target="_blank"><i class="icon icon-github"></i></a>
 				</div>
 
 				<div class="latest-tweet-frame">
