@@ -15,5 +15,6 @@
 		<?php foreach (Lib::view('page')->getPages() as $pageslug => $page) { ?>
 		<li class="menu-item"><a class="menu-item-link <?php if ($viewname === 'page' && $pageslug === $slug) { ?>active<?php } ?>" href="<?php echo Lib::url('page', array('slug' => $pageslug)); ?>"><?php echo $page->title; ?></a></li>
 		<?php } ?>
+		<li class="menu-item menu-item-about"><a class="menu-item-link <?php if ($viewname === 'about') { ?>active<?php } ?>" href="<?php echo Lib::url('about'); ?>">About</a></li>
 	</ul>
 </div>

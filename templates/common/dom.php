@@ -9,6 +9,8 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, minimal-ui" />
 
+	<link href="assets/css/fonticon.mod.css" media="all" rel="stylesheet" type="text/css" />
+
 	<link href="assets/css/rainbow-github.css" rel="stylesheet" type="text/css" />
 	<script src="assets/js/rainbow.min.js" type="text/javascript"></script>
 
@@ -43,7 +45,9 @@
 </head>
 <body>
 <?php echo Lib::output('common/menu', array('viewname' => $viewname, 'slug' => !empty($slug) ? $slug : '')); ?>
-<?php echo Lib::output('common/header', array('pagetitle' => !empty($pagetitle) ? $pagetitle : Config::getPageTitle(), 'pagedate' => !empty($pagedate) ? $pagedate : null)); ?>
+<?php if (empty($hideHeader)) { ?>
+<?php echo Lib::output('common/header', array('pagetitle' => !empty($pagetitle) ? $pagetitle : Config::getPageTitle(), 'pagesubtitle' => !empty($pagedate) ? $pagedate : 'jsonobject.io')); ?>
+<?php } ?>
 <div class="wrapper">
 <?php echo $body; ?>
 </div>
