@@ -1,13 +1,19 @@
 @import 'colors';
+@import 'skill-icons';
 
 .background-color(@color, @angle: 90deg) when (@color = 'red') {
 	background-color: @red500;
-	background: linear-gradient(@angle, @red300 0%, @red400 30%, @red600 70%, @red700 100%);
+	background: linear-gradient(@angle, @red300 0%, @red400 40%, @red600 80%, @red700 100%);
 }
 
 .background-color(@color, @angle: 90deg) when (@color = 'grey') {
 	background-color: @bluegrey500;
-	background: linear-gradient(@angle, @bluegrey300, @bluegrey400, @bluegrey600, @bluegrey700);
+	background: linear-gradient(@angle, @bluegrey400, @bluegrey600);
+}
+
+.background-color(@color, @angle: 90deg) when (@color = 'lightgrey') {
+	background-color: @bluegrey500;
+	background: linear-gradient(@angle, @bluegrey300, @bluegrey200 10%, @bluegrey100 20%, @bluegrey50);
 }
 
 body {
@@ -72,7 +78,7 @@ body {
 	}
 
 	.section-intro {
-		.background-color('grey', -45deg);
+		.background-color('grey', -90deg);
 
 		.section-content {
 			padding: 144px 0;
@@ -195,6 +201,105 @@ body {
 				.highlight {
 					color: @white;
 					font-style: italic;
+				}
+			}
+		}
+	}
+
+	.section-tags {
+		.background-color('lightgrey', 90deg);
+
+		.section-content {
+			padding: 96px 0;
+		}
+
+		.about-tags {
+			text-align: center;
+
+			.about-tag {
+				display: inline-block;
+				font-weight: 400;
+				padding: 0 16px 0 4px;
+				margin: 8px;
+				border-radius: 2px;
+				cursor: default;
+				height: 64px;
+				line-height: 64px;
+				vertical-align: middle;
+				transition: all .2s;
+				color: @bluegrey500;
+
+				&::before {
+					display: inline-block;
+					vertical-align: top;
+					margin: 8px;
+					opacity: 0.6;
+					-webkit-filter: grayscale(50%);
+					content: '';
+					background-size: 100% 100%;
+					background-repeat: no-repeat;
+					width: 48px;
+					height: 48px;
+					transition: all .2s;
+				}
+
+				&:hover {
+					background-color: rgba(0, 0, 0, 0.1);
+					color: @white;
+
+					&::before {
+						opacity: 1;
+						-webkit-filter: grayscale(0);
+					}
+				}
+
+				.maketag(@name) {
+					&.tag-@{name} {
+						&::before {
+							.icon(@name);
+						}
+					}
+				}
+
+				.maketag(angular);
+				.maketag(apache);
+				.maketag(csharp);
+				.maketag(coffeescript);
+				.maketag(css);
+				.maketag(git);
+				.maketag(html);
+				.maketag(illustrator);
+				.maketag(jade);
+				.maketag(js);
+				.maketag(jquery);
+				.maketag(less);
+				.maketag(mercurial);
+				.maketag(nodejs);
+				.maketag(others);
+				.maketag(photoshop);
+				.maketag(php);
+				.maketag(python);
+				.maketag(ruby);
+				.maketag(shell);
+				.maketag(sql);
+				.maketag(swift);
+			}
+		}
+
+		.about-tags-main {
+			font-size: 24px;
+		}
+
+		.about-tags-sub {
+			font-size: 16px;
+
+			.about-tag {
+				height: 42px;
+				line-height: 42px;
+
+				&::before {
+					width: 26px;
+					height: 26px;
 				}
 			}
 		}

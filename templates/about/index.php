@@ -47,4 +47,48 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="section section-tags">
+		<div class="container">
+			<div class="section-content">
+				<ul class="about-tags about-tags-main">
+					<li class="about-tag tag-html">HTML</li>
+					<li class="about-tag tag-css">CSS</li>
+					<li class="about-tag tag-js">JavaScript</li>
+				</ul>
+				<ul class="about-tags about-tags-sub">
+					<li class="about-tag tag-jade">Jade</li>
+					<li class="about-tag tag-less">LESS</li>
+					<li class="about-tag tag-coffeescript">CoffeeScript</li>
+					<li class="about-tag tag-angular">AngularJS</li>
+					<li class="about-tag tag-jquery">jQuery</li>
+				</ul>
+				<ul class="about-tags about-tags-main">
+					<li class="about-tag tag-php">PHP</li>
+					<li class="about-tag tag-nodejs">NodeJS</li>
+				</ul>
+				<ul class="about-tags about-tags-sub">
+					<li class="about-tag tag-python">Python</li>
+					<li class="about-tag tag-ruby">Ruby</li>
+					<li class="about-tag tag-shell">Shell</li>
+					<li class="about-tag tag-swift">Swift</li>
+				</ul>
+				<ul class="about-tags about-tags-main">
+					<li class="about-tag tag-apache">Apache</li>
+					<li class="about-tag tag-sql">SQL</li>
+				</ul>
+				<ul class="about-tags about-tags-sub">
+					<li class="about-tag tag-git">Git</li>
+					<li class="about-tag tag-mercurial">Mercurial</li>
+				</ul>
+				<ul class="about-tags about-tags-main">
+					<li class="about-tag tag-illustrator">Illustrator</li>
+					<li class="about-tag tag-photoshop">Photoshop</li>
+				</ul>
+				<ul class="about-tags about-tags-sub">
+					<li class="about-tag tag-others">Anything else?</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
