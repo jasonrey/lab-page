@@ -17,7 +17,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100' rel='stylesheet' type='text/css' />
 
 	<?php if ($viewname === 'about') { ?>
-	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two' rel='stylesheet' type='text/css' />
 	<?php } ?>
 
 	<link rel="stylesheet<?php if (Config::env() === 'development') { ?>/less<?php } ?>" type="text/css" href="assets/css/base.<?php echo Config::env() === 'development' ? 'less' : 'css'; ?>" />
