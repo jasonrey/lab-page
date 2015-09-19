@@ -112,11 +112,41 @@ body {
 	.section-intro {
 		.background-color('grey', -90deg);
 
-		&::before {
-			.section-background-text;
-			content: 'hello';
-			color: @bluegrey50;
-			opacity: 0.03;
+		// &::before {
+		// 	.section-background-text;
+		// 	content: 'me';
+		// 	color: @bluegrey50;
+		// 	opacity: 0.03;
+		// 	z-index: 2;
+		// }
+
+		.section-background {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+
+			.section-background-image {
+				width: 1000px;
+				height: 550px;
+				margin: 0 auto;
+				background-image: url('../img/about-background.png');
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				z-index: 1;
+				opacity: 0.2;
+
+				@media (max-width: 1000px) {
+					width: 100%;
+					background-size: auto 100%;
+					background-position: 50% 50%;
+				}
+
+				@media (max-width: 760px) {
+					height: 100%;
+				}
+			}
 		}
 
 		.section-content {
@@ -293,6 +323,7 @@ body {
 					margin: 8px;
 					opacity: 0.6;
 					-webkit-filter: grayscale(50%);
+					filter: grayscale(50%);
 					content: '';
 					background-size: 100% 100%;
 					background-repeat: no-repeat;

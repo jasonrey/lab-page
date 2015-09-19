@@ -15,6 +15,9 @@
 		</div>
 	</div>
 	<div class="section section-intro">
+		<div class="section-background">
+			<div class="section-background-image"></div>
+		</div>
 		<div class="section-content">
 			<div class="container">
 				<h3 class="name">Jason Rey</h3>
