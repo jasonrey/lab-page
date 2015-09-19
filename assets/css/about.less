@@ -1,24 +1,65 @@
 @import 'colors';
+@import 'skill-icons';
+
+.background-color(@color, @angle: 90deg) when (@color = 'red') {
+	background-color: @red500;
+	background: linear-gradient(@angle, @red300 -10%, @red400 30%, @red600 80%, @red700 100%);
+}
+
+.background-color(@color, @angle: 90deg) when (@color = 'grey') {
+	background-color: @bluegrey500;
+	background: linear-gradient(@angle, @bluegrey400, @bluegrey600);
+}
+
+.background-color(@color, @angle: 90deg) when (@color = 'lightgrey') {
+	background-color: @bluegrey500;
+	background: linear-gradient(@angle, @bluegrey300, @bluegrey200 5%, @bluegrey100 10%, @bluegrey50 30%, @grey50);
+}
 
 body {
-	background-color: @red500;
-	background: linear-gradient(90deg, @red400, @red600);
-	// background-color: @bluegrey500;
-	// background: linear-gradient(90deg, @bluegrey600, @bluegrey400);
+	.background-color('grey');
 }
 
 #about {
+	.section-background-text {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		font-size: 16px;
+		font-weight: 400;
+		transform-origin: bottom right;
+		transform: scale(20);
+
+		@media (max-width: 760px) {
+			transform: scale(15);
+		}
+
+		@media (max-width: 640px) {
+			transform: scale(12.5);
+		}
+
+		@media (max-width: 520px) {
+			transform: scale(10);
+		}
+
+		@media (max-width: 400px) {
+			transform: scale(7.5);
+		}
+	}
+
 	.section {
 		position: relative;
 		color: @white;
+		overflow: hidden;
+
+		.container {
+			position: relative;
+		}
 	}
 
 	.section-header {
+		.background-color('red', -135deg);
 		height: 420px;
-		// background-color: @red500;
-		// background: linear-gradient(90deg, @red400, @red600);
-		background-color: @bluegrey500;
-		background: linear-gradient(90deg, @bluegrey600, @bluegrey400);
 		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 		text-align: center;
 		z-index: 1;
@@ -55,8 +96,9 @@ body {
 
 		h1 {
 			margin: 0;
-			font-weight: 300;
-			font-size: 60px;
+			font-weight: 100;
+			font-size: 96px;
+			opacity: 0.87;
 		}
 
 		h2 {
@@ -68,8 +110,17 @@ body {
 	}
 
 	.section-intro {
+		.background-color('grey', -90deg);
+
+		&::before {
+			.section-background-text;
+			content: 'hello';
+			color: @bluegrey50;
+			opacity: 0.03;
+		}
+
 		.section-content {
-			padding: 144px 0;
+			padding: 160px 0;
 			position: relative;
 
 			@media (max-width: 760px) {
@@ -78,8 +129,9 @@ body {
 
 			h3 {
 				margin: 12px 0;
-				font-size: 72px;
-				font-weight: 100;
+				font-size: 80px;
+				font-family: 'Shadows Into Light Two', cursive;
+				opacity: 0.87;
 			}
 
 			h4 {
@@ -104,11 +156,12 @@ body {
 					text-align: center;
 					line-height: 48px;
 					border-radius: 2px;
+					opacity: 0.87;
 
 					&:hover {
 						background-color: @grey50;
 						background: linear-gradient(135deg, @white, @grey300);
-						color: @red500;
+						color: @grey700;
 					}
 				}
 			}
@@ -167,30 +220,168 @@ body {
 	}
 
 	.section-intro-2 {
-		background-color: @bluegrey500;
-		background: linear-gradient(90deg, @bluegrey600, @bluegrey400);
+		.background-color('red', -45deg);
+		box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
 		text-align: center;
 		z-index: 1;
 
+		&::before {
+			.section-background-text;
+			content: 'about';
+			color: @red50;
+			opacity: 0.05;
+		}
+
 		.section-content {
 			padding: 96px 0;
+			position: relative;
 
 			p {
 				font-weight: 400;
 				font-size: 20px;
-				padding: 0 128px;
-				margin: 36px 0;
+				padding: 0;
+				margin: 36px auto;
 				line-height: 36px;
 				color: rgba(255, 255, 255, 0.7);
+				width: 50%;
 
 				@media (max-width: 760px) {
-					padding: 0;
+					width: 100%;
 				}
 
 				.highlight {
 					color: @white;
 					font-style: italic;
 				}
+			}
+		}
+	}
+
+	.section-tags {
+		.background-color('lightgrey', 90deg);
+
+		&::before {
+			.section-background-text;
+			content: 'skills';
+			color: @bluegrey500;
+			opacity: 0.02;
+		}
+
+		.section-content {
+			padding: 96px 0;
+		}
+
+		.about-tags {
+			text-align: center;
+
+			.about-tag {
+				display: inline-block;
+				font-weight: 300;
+				padding: 0 16px 0 4px;
+				margin: 8px 4px;
+				border-radius: 2px;
+				cursor: default;
+				height: 64px;
+				line-height: 64px;
+				vertical-align: middle;
+				transition: all .2s;
+				color: @bluegrey500;
+
+				&::before {
+					display: inline-block;
+					vertical-align: top;
+					margin: 8px;
+					opacity: 0.6;
+					-webkit-filter: grayscale(50%);
+					content: '';
+					background-size: 100% 100%;
+					background-repeat: no-repeat;
+					width: 48px;
+					height: 48px;
+					transition: all .2s;
+				}
+
+				&:hover {
+					background-color: rgba(0, 0, 0, 0.1);
+					color: @bluegrey700;
+
+					&::before {
+						opacity: 1;
+						-webkit-filter: grayscale(0);
+					}
+				}
+
+				.maketag(@name) {
+					&.tag-@{name} {
+						&::before {
+							.icon(@name);
+						}
+					}
+				}
+
+				.maketag(angular);
+				.maketag(apache);
+				.maketag(csharp);
+				.maketag(coffeescript);
+				.maketag(css);
+				.maketag(git);
+				.maketag(html);
+				.maketag(illustrator);
+				.maketag(jade);
+				.maketag(js);
+				.maketag(jquery);
+				.maketag(less);
+				.maketag(mercurial);
+				.maketag(nodejs);
+				.maketag(others);
+				.maketag(photoshop);
+				.maketag(php);
+				.maketag(python);
+				.maketag(ruby);
+				.maketag(shell);
+				.maketag(sql);
+				.maketag(swift);
+			}
+		}
+
+		.about-tags-main {
+			font-size: 24px;
+		}
+
+		.about-tags-sub {
+			font-size: 16px;
+
+			.about-tag {
+				height: 42px;
+				line-height: 42px;
+
+				&::before {
+					width: 26px;
+					height: 26px;
+				}
+			}
+		}
+	}
+
+	.section-footer {
+		.background-color('grey', -135deg);
+		box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+
+		.section-content {
+			text-align: center;
+			padding: 36px 0;
+
+			p {
+				vertical-align: middle;
+				font-weight: 300;
+				font-size: 18px;
+			}
+
+			.separator {
+				display: inline-block;
+				vertical-align: middle;
+				font-size: 32px;
+				margin: 0 18px;
 			}
 		}
 	}
