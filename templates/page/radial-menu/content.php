@@ -48,23 +48,23 @@
 <div class="sample-codes">
 	<div class="sample-types">
 		<div class="sample-type active"><h4 class="sample-code-type">HTML</h4></div>
-		<div class="sample-type"><h4 class="sample-code-type">CSS - Base</h4></div>
-		<div class="sample-type"><h4 class="sample-code-type">CSS - Type 1</h4></div>
-		<div class="sample-type"><h4 class="sample-code-type">CSS - Type 2</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">LESS - Base</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">LESS - Type 1</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">LESS - Type 2</h4></div>
 	</div>
 
 	<div class="sample-contents">
 		<div class="sample-content active">
-			<pre data-language="html"><?php echo $this->loadTemplate('radial-menu/codes/html'); ?></pre>
+			<pre><?php echo $this->loadTemplate('radial-menu/codes/html'); ?></pre>
 		</div>
 		<div class="sample-content">
-			<pre data-language="css"><?php echo $this->loadTemplate('radial-menu/codes/css-base'); ?></pre>
+			<pre><?php echo $this->loadTemplate('radial-menu/codes/less-base'); ?></pre>
 		</div>
 		<div class="sample-content">
-			<pre data-language="css"><?php echo $this->loadTemplate('radial-menu/codes/css-type-1'); ?></pre>
+			<pre><?php echo $this->loadTemplate('radial-menu/codes/less-type-1'); ?></pre>
 		</div>
 		<div class="sample-content">
-			<pre data-language="css"><?php echo $this->loadTemplate('radial-menu/codes/css-type-2'); ?></pre>
+			<pre><?php echo $this->loadTemplate('radial-menu/codes/less-type-2'); ?></pre>
 		</div>
 	</div>
 </div>
