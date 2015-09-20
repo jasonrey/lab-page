@@ -1,7 +1,7 @@
 <?php
 !defined('SERVER_EXEC') && die('No access.');
 ?>
-<code>.radial-menu {
+.radial-menu {
   .radial-menu-items {
     .radial-menu-item {
       transform: scale(0);
@@ -100,4 +100,3 @@
     }
   }
 }
-</code>
