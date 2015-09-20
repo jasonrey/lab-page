@@ -11,8 +11,13 @@
 
 	<link href="assets/css/fonticon.mod.css" media="all" rel="stylesheet" type="text/css" />
 
+	<?php if (false) { ?>
 	<link href="assets/css/rainbow-github.css" rel="stylesheet" type="text/css" />
 	<script src="assets/js/rainbow.min.js" type="text/javascript"></script>
+	<?php } ?>
+
+	<link href="assets/css/highlight-github.css" rel="stylesheet" type="text/css" />
+	<script src="assets/js/highlight.min.js" type="text/javascript"></script>
 
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100' rel='stylesheet' type='text/css' />
 

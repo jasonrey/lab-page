@@ -1,0 +1,306 @@
+@import 'colors';
+
+@color: @red400;
+@color-highlight: @red700;
+@baseSize: 64px;
+@itemSize: (@baseSize * 2) / 3;
+@itemOddPosition: ((@baseSize + @itemSize) / 2) + (@baseSize - @itemSize);
+@itemEvenPosition: round(sqrt(2 * pow(@itemOddPosition, 2)) / 2);
+
+#radial-menu {
+	.radial-menus {
+		text-align: center;
+
+		.radial-menu {
+			position: relative;
+			display: inline-block;
+			width: @baseSize;
+			height: @baseSize;
+			margin: @baseSize (@baseSize + 16px);
+
+			.radial-menu-items {
+				position: absolute;
+				top: (@baseSize - @itemSize) / 2;
+				left: (@baseSize - @itemSize) / 2;
+				width: @itemSize;
+				height: @itemSize;
+				counter-reset: section;
+
+				.radial-menu-item {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					border-radius: 50%;
+					cursor: pointer;
+					background-color: @color;
+					box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+					transition-property: transform, background-color;
+					transition-duration: 200ms;
+
+					&::before {
+						counter-increment: section;
+						content: counter(section);
+						color: @white;
+						display: block;
+						height: @itemSize;
+						line-height: @itemSize;
+						text-align: center;
+					}
+
+					&:hover {
+						background-color: @color-highlight;
+					}
+				}
+			}
+
+			.radial-menu-toggle {
+				position: relative;
+				display: inline-block;
+				width: @baseSize;
+				height: @baseSize;
+				cursor: pointer;
+				background-color: @color;
+				border-radius: 50%;
+				box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+				transition: all .2s;
+
+				&:hover {
+					background-color: @color-highlight;
+				}
+
+				.radial-menu-toggle-lines {
+					position: absolute;
+					top: (@baseSize / 2) - (2px / 2);
+					left: @baseSize / 4;
+					width: @baseSize / 2;
+					height: 2px;
+					transition: all .3s;
+
+					.radial-menu-toggle-line {
+						position: absolute;
+						top: 0;
+						left: 0;
+						height: 2px;
+						width: 100%;
+						display: block;
+						transition: all .3s;
+
+						&::before {
+							content: '';
+							height: 100%;
+							width: 100%;
+							background-color: @white;
+							display: block;
+							transition: all .3s;
+						}
+					}
+
+					.radial-menu-toggle-line-top {
+						transform: translateY(-@baseSize / 8);
+					}
+
+					.radial-menu-toggle-line-bottom {
+						transform: translateY(@baseSize / 8);
+					}
+				}
+			}
+		}
+
+		.radial-menu-1 {
+			&.active {
+				.radial-menu-items {
+					.radial-menu-item {
+						&:nth-child(1) {
+							transform: translate(0, -@itemOddPosition);
+						}
+
+						&:nth-child(2) {
+							transform: translate(-@itemEvenPosition, -@itemEvenPosition);
+							transition-delay: 100ms, 0s;
+						}
+
+						&:nth-child(3) {
+							transform: translate(-@itemOddPosition, 0);
+							transition-delay: 200ms, 0s;
+						}
+
+						&:nth-child(4) {
+							transform: translate(-@itemEvenPosition, @itemEvenPosition);
+							transition-delay: 300ms, 0s;
+						}
+
+						&:nth-child(5) {
+							transform: translate(0, @itemOddPosition);
+							transition-delay: 400ms, 0s;
+						}
+
+						&:nth-child(6) {
+							transform: translate(@itemEvenPosition, @itemEvenPosition);
+							transition-delay: 500ms, 0s;
+						}
+
+						&:nth-child(7) {
+							transform: translate(@itemOddPosition, 0);
+							transition-delay: 600ms, 0s;
+						}
+
+						&:nth-child(8) {
+							transform: translate(@itemEvenPosition, -@itemEvenPosition);
+							transition-delay: 700ms, 0s;
+						}
+					}
+				}
+
+				.radial-menu-toggle {
+					.radial-menu-toggle-lines {
+						transform: rotate(90deg);
+
+						.radial-menu-toggle-line-middle {
+							opacity: 0;
+						}
+
+						.radial-menu-toggle-line-top, .radial-menu-toggle-line-bottom {
+							transform: translateY(0);
+						}
+
+						.radial-menu-toggle-line-top {
+							&::before {
+								transform: rotate(45deg);
+							}
+						}
+
+						.radial-menu-toggle-line-bottom {
+							&::before {
+								transform: rotate(-45deg);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.radial-menu-2 {
+			.radial-menu-items {
+				.radial-menu-item {
+					transform: scale(0);
+
+					&:nth-child(1) {
+						top: -@itemOddPosition;
+						left: 0;
+					}
+
+					&:nth-child(2) {
+						top: -@itemEvenPosition;
+						left: -@itemEvenPosition;
+					}
+
+					&:nth-child(3) {
+						top: 0;
+						left: -@itemOddPosition;
+					}
+
+					&:nth-child(4) {
+						top: @itemEvenPosition;
+						left: -@itemEvenPosition;
+					}
+
+					&:nth-child(5) {
+						top: @itemOddPosition;
+						left: 0;
+					}
+
+					&:nth-child(6) {
+						top: @itemEvenPosition;
+						left: @itemEvenPosition;
+					}
+
+					&:nth-child(7) {
+						top: 0;
+						left: @itemOddPosition;
+					}
+
+					&:nth-child(8) {
+						top: -@itemEvenPosition;
+						left: @itemEvenPosition;
+					}
+				}
+			}
+
+			.radial-menu-toggle {
+				.radial-menu-toggle-lines {
+					.radial-menu-toggle-line-top {
+						&::before {
+							transform-origin: left bottom;
+						}
+					}
+
+					.radial-menu-toggle-line-middle {
+						&::before {
+							transform-origin: right bottom;
+						}
+					}
+				}
+			}
+
+			&.active {
+				.radial-menu-items {
+					.radial-menu-item {
+						transform: scale(1);
+
+						&:nth-child(2) {
+							transition-delay: 100ms, 0s;
+						}
+
+						&:nth-child(3) {
+							transition-delay: 200ms, 0s;
+						}
+
+						&:nth-child(4) {
+							transition-delay: 300ms, 0s;
+						}
+
+						&:nth-child(5) {
+							transition-delay: 400ms, 0s;
+						}
+
+						&:nth-child(6) {
+							transition-delay: 500ms, 0s;
+						}
+
+						&:nth-child(7) {
+							transition-delay: 600ms, 0s;
+						}
+
+						&:nth-child(8) {
+							transition-delay: 700ms, 0s;
+						}
+					}
+				}
+
+				.radial-menu-toggle {
+					.radial-menu-toggle-lines {
+						transform: translateY(@baseSize / 24);
+
+						.radial-menu-toggle-line-top {
+							transform: translate(@baseSize / 96, (@baseSize / 8));
+
+							&::before {
+								transform: rotate(-60deg);
+							}
+						}
+
+						.radial-menu-toggle-line-middle {
+							transform: translate(-@baseSize / 96, (@baseSize / 8));
+
+							&::before {
+								transform: rotate(60deg);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

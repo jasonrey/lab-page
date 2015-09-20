@@ -1,6 +1,9 @@
 'use strict'
 
 $ ->
+	# Init highlight.js
+	hljs.initHighlightingOnLoad()
+
 	$window = $ window
 	$body = $ 'body'
 	$menuButton = $ '.menu-button'
@@ -16,7 +19,7 @@ $ ->
 	headerShrinkHandler = (ev) ->
 		$body.toggleClass 'shrink-header', window.pageYOffset > 125
 
-	if $window.height() > 750 || $window.width() > 760
+	if $window.height() > 750
 		headerShrinkImplemented = true
 		$window.on 'scroll', headerShrinkHandler
 
@@ -47,5 +50,14 @@ $ ->
 	$body.on 'click', '[data-event="click"]', (ev) ->
 		button = $ this
 		classname = button.data 'toggle'
+		target = button.data 'target'
+		element = button
 
-		button.toggleClass classname
+		switch target
+			when 'parent'
+				element = button.parent()
+			when 'parents'
+				parents = button.data 'parents'
+				element = button.parents parents
+
+		element.toggleClass classname
