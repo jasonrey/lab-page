@@ -1,5 +1,11 @@
 @import 'colors';
 
+@baseSize: 96px;
+@lineHeight: 2px;
+@animationDuration: 300ms;
+@color: @red300;
+@color-highlight: @red700;
+
 #hamburger {
 	.hamburger-items {
 		text-align: center;
@@ -7,42 +13,43 @@
 		.hamburger-menu {
 			position: relative;
 			display: inline-block;
-			width: 48px;
-			height: 48px;
-			margin: 12px;
+			width: @baseSize;
+			height: @baseSize;
 			cursor: pointer;
 
 			.hamburger-menu-lines {
 				position: absolute;
-				width: 100%;
-				top: 23px;
-				transition: all .3s;
+				top: (@baseSize - @lineHeight) / 2;
+				left: @baseSize / 4;
+				width: @baseSize / 2;
+				height: @lineHeight;
+				transition: all @animationDuration;
 
 				.hamburger-menu-line {
 					position: absolute;
 					top: 0;
 					left: 0;
-					height: 2px;
+					height: @lineHeight;
 					width: 100%;
 					display: block;
-					transition: all .3s;
+					transition: all @animationDuration;
 
 					&::before {
 						content: '';
 						height: 100%;
 						width: 100%;
-						background-color: @red300;
+						background-color: @color;
 						display: block;
-						transition: all .3s;
+						transition: all @animationDuration;
 					}
 				}
 
 				.hamburger-menu-line-top {
-					transform: translateY(-16px);
+					transform: translateY(-@baseSize / 8);
 				}
 
 				.hamburger-menu-line-bottom {
-					transform: translateY(16px);
+					transform: translateY(@baseSize / 8);
 				}
 			}
 
@@ -50,7 +57,7 @@
 				.hamburger-menu-lines {
 					.hamburger-menu-line {
 						&::before {
-							background-color: @red700;
+							background-color: @color-highlight;
 						}
 					}
 				}
@@ -60,7 +67,7 @@
 		.hamburger-menu-1 {
 			.hamburger-menu-lines {
 				.hamburger-menu-line-middle {
-					transition: opacity .3s;
+					transition: opacity @animationDuration;
 				}
 			}
 
@@ -92,7 +99,7 @@
 		.hamburger-menu-2 {
 			.hamburger-menu-lines {
 				.hamburger-menu-line-top, .hamburger-menu-line-bottom {
-					transition-delay: .15s;
+					transition-delay: @animationDuration / 2;
 
 					&::before {
 						transition-delay: 0s;
@@ -113,7 +120,7 @@
 						transition-delay: 0s;
 
 						&::before {
-							transition-delay: .15s;
+							transition-delay: @animationDuration / 2;
 						}
 					}
 
@@ -151,13 +158,13 @@
 
 					.hamburger-menu-line-top {
 						&::before {
-							transform: rotate(45deg) scaleX(0.5);
+							transform: rotate(45deg) scaleX(0.6);
 						}
 					}
 
 					.hamburger-menu-line-bottom {
 						&::before {
-							transform: rotate(-45deg) scaleX(0.5);
+							transform: rotate(-45deg) scaleX(0.6);
 						}
 					}
 				}
@@ -181,8 +188,10 @@
 
 			&.active {
 				.hamburger-menu-lines {
+					transform: translateY(@baseSize / 24);
+
 					.hamburger-menu-line-top {
-						transform: translateY(16px) translateX(1px);
+						transform: translate(@baseSize / 96, (@baseSize / 8));
 
 						&::before {
 							transform: rotate(-60deg);
@@ -190,7 +199,7 @@
 					}
 
 					.hamburger-menu-line-middle {
-						transform: translateY(16px) translateX(-1px);
+						transform: translate(-@baseSize / 96, (@baseSize / 8));
 
 						&::before {
 							transform: rotate(60deg);
