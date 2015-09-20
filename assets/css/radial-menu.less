@@ -1,5 +1,12 @@
 @import 'colors';
 
+@color: @red400;
+@color-highlight: @red700;
+@baseSize: 64px;
+@itemSize: (@baseSize * 2) / 3;
+@itemOddPosition: ((@baseSize + @itemSize) / 2) + (@baseSize - @itemSize);
+@itemEvenPosition: round(sqrt(2 * pow(@itemOddPosition, 2)) / 2);
+
 #radial-menu {
 	.radial-menus {
 		text-align: center;
@@ -7,16 +14,16 @@
 		.radial-menu {
 			position: relative;
 			display: inline-block;
-			width: 48px;
-			height: 48px;
-			margin: 48px 64px;
+			width: @baseSize;
+			height: @baseSize;
+			margin: @baseSize (@baseSize + 16px);
 
 			.radial-menu-items {
 				position: absolute;
-				top: 8px;
-				left: 8px;
-				width: 32px;
-				height: 32px;
+				top: (@baseSize - @itemSize) / 2;
+				left: (@baseSize - @itemSize) / 2;
+				width: @itemSize;
+				height: @itemSize;
 				counter-reset: section;
 
 				.radial-menu-item {
@@ -27,24 +34,23 @@
 					height: 100%;
 					border-radius: 50%;
 					cursor: pointer;
-					background-color: @red500;
+					background-color: @color;
 					box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
-					transition-property: transform, opacity;
+					transition-property: transform, background-color;
 					transition-duration: 200ms;
-					opacity: 0.8;
 
 					&::before {
 						counter-increment: section;
 						content: counter(section);
 						color: @white;
 						display: block;
-						height: 32px;
-						line-height: 32px;
+						height: @itemSize;
+						line-height: @itemSize;
 						text-align: center;
 					}
 
 					&:hover {
-						opacity: 1;
+						background-color: @color-highlight;
 					}
 				}
 			}
@@ -52,23 +58,23 @@
 			.radial-menu-toggle {
 				position: relative;
 				display: inline-block;
-				width: 48px;
-				height: 48px;
+				width: @baseSize;
+				height: @baseSize;
 				cursor: pointer;
-				background-color: @red400;
+				background-color: @color;
 				border-radius: 50%;
 				box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
 				transition: all .2s;
 
 				&:hover {
-					background-color: @red500;
+					background-color: @color-highlight;
 				}
 
 				.radial-menu-toggle-lines {
 					position: absolute;
-					top: 23px;
-					left: 12px;
-					width: 24px;
+					top: (@baseSize / 2) - (2px / 2);
+					left: @baseSize / 4;
+					width: @baseSize / 2;
 					height: 2px;
 					transition: all .3s;
 
@@ -92,11 +98,11 @@
 					}
 
 					.radial-menu-toggle-line-top {
-						transform: translateY(-6px);
+						transform: translateY(-@baseSize / 8);
 					}
 
 					.radial-menu-toggle-line-bottom {
-						transform: translateY(6px);
+						transform: translateY(@baseSize / 8);
 					}
 				}
 			}
@@ -107,41 +113,41 @@
 				.radial-menu-items {
 					.radial-menu-item {
 						&:nth-child(1) {
-							transform: translate(0, -56px);
+							transform: translate(0, -@itemOddPosition);
 						}
 
 						&:nth-child(2) {
-							transform: translate(-38px, -38px);
+							transform: translate(-@itemEvenPosition, -@itemEvenPosition);
 							transition-delay: 100ms, 0s;
 						}
 
 						&:nth-child(3) {
-							transform: translate(-56px, 0);
+							transform: translate(-@itemOddPosition, 0);
 							transition-delay: 200ms, 0s;
 						}
 
 						&:nth-child(4) {
-							transform: translate(-38px, 38px);
+							transform: translate(-@itemEvenPosition, @itemEvenPosition);
 							transition-delay: 300ms, 0s;
 						}
 
 						&:nth-child(5) {
-							transform: translate(0, 56px);
+							transform: translate(0, @itemOddPosition);
 							transition-delay: 400ms, 0s;
 						}
 
 						&:nth-child(6) {
-							transform: translate(38px, 38px);
+							transform: translate(@itemEvenPosition, @itemEvenPosition);
 							transition-delay: 500ms, 0s;
 						}
 
 						&:nth-child(7) {
-							transform: translate(56px, 0);
+							transform: translate(@itemOddPosition, 0);
 							transition-delay: 600ms, 0s;
 						}
 
 						&:nth-child(8) {
-							transform: translate(38px, -38px);
+							transform: translate(@itemEvenPosition, -@itemEvenPosition);
 							transition-delay: 700ms, 0s;
 						}
 					}
@@ -181,43 +187,43 @@
 					transform: scale(0);
 
 					&:nth-child(1) {
-						top: -56px;
+						top: -@itemOddPosition;
 						left: 0;
 					}
 
 					&:nth-child(2) {
-						top: -38px;
-						left: -38px;
+						top: -@itemEvenPosition;
+						left: -@itemEvenPosition;
 					}
 
 					&:nth-child(3) {
 						top: 0;
-						left: -56px;
+						left: -@itemOddPosition;
 					}
 
 					&:nth-child(4) {
-						top: 38px;
-						left: -38px;
+						top: @itemEvenPosition;
+						left: -@itemEvenPosition;
 					}
 
 					&:nth-child(5) {
-						top: 56px;
+						top: @itemOddPosition;
 						left: 0;
 					}
 
 					&:nth-child(6) {
-						top: 38px;
-						left: 38px;
+						top: @itemEvenPosition;
+						left: @itemEvenPosition;
 					}
 
 					&:nth-child(7) {
 						top: 0;
-						left: 56px;
+						left: @itemOddPosition;
 					}
 
 					&:nth-child(8) {
-						top: -38px;
-						left: 38px;
+						top: -@itemEvenPosition;
+						left: @itemEvenPosition;
 					}
 				}
 			}
@@ -242,9 +248,6 @@
 				.radial-menu-items {
 					.radial-menu-item {
 						transform: scale(1);
-
-						&:nth-child(1) {
-						}
 
 						&:nth-child(2) {
 							transition-delay: 100ms, 0s;
@@ -278,11 +281,10 @@
 
 				.radial-menu-toggle {
 					.radial-menu-toggle-lines {
-						transform: translateY(2px);
+						transform: translateY(@baseSize / 24);
 
 						.radial-menu-toggle-line-top {
-							transform: translate(1px, 6px);
-							// transform: translateY(16px) translateX(1px);
+							transform: translate(@baseSize / 96, (@baseSize / 8));
 
 							&::before {
 								transform: rotate(-60deg);
@@ -290,8 +292,7 @@
 						}
 
 						.radial-menu-toggle-line-middle {
-							transform: translate(-1px, 6px);
-							// transform: translateY(16px) translateX(-1px);
+							transform: translate(-@baseSize / 96, (@baseSize / 8));
 
 							&::before {
 								transform: rotate(60deg);
