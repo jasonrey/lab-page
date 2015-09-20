@@ -40,31 +40,31 @@
 <div class="sample-codes">
 	<div class="sample-types">
 		<div class="sample-type active"><h4 class="sample-code-type">HTML</h4></div>
-		<div class="sample-type"><h4 class="sample-code-type">CSS - Base</h4></div>
-		<div class="sample-type"><h4 class="sample-code-type">CSS - Type 1</h4></div>
-		<div class="sample-type"><h4 class="sample-code-type">CSS - Type 2</h4></div>
-		<div class="sample-type"><h4 class="sample-code-type">CSS - Type 3</h4></div>
-		<div class="sample-type"><h4 class="sample-code-type">CSS - Type 4</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">LESS - Base</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">LESS - Type 1</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">LESS - Type 2</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">LESS - Type 3</h4></div>
+		<div class="sample-type"><h4 class="sample-code-type">LESS - Type 4</h4></div>
 	</div>
 
 	<div class="sample-contents">
 		<div class="sample-content active">
-			<pre data-language="html"><?php echo $this->loadTemplate('hamburger/codes/html'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('hamburger/codes/html'); ?></code></pre>
 		</div>
 		<div class="sample-content">
-			<pre data-language="css"><?php echo $this->loadTemplate('hamburger/codes/css-base'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('hamburger/codes/less-base'); ?></code></pre>
 		</div>
 		<div class="sample-content">
-			<pre data-language="css"><?php echo $this->loadTemplate('hamburger/codes/css-type-1'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('hamburger/codes/less-type-1'); ?></code></pre>
 		</div>
 		<div class="sample-content">
-			<pre data-language="css"><?php echo $this->loadTemplate('hamburger/codes/css-type-2'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('hamburger/codes/less-type-2'); ?></code></pre>
 		</div>
 		<div class="sample-content">
-			<pre data-language="css"><?php echo $this->loadTemplate('hamburger/codes/css-type-3'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('hamburger/codes/less-type-3'); ?></code></pre>
 		</div>
 		<div class="sample-content">
-			<pre data-language="css"><?php echo $this->loadTemplate('hamburger/codes/css-type-4'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('hamburger/codes/less-type-4'); ?></code></pre>
 		</div>
 	</div>
 </div>
