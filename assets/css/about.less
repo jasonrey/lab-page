@@ -315,8 +315,6 @@ body {
 				margin: 8px 4px;
 				border-radius: 2px;
 				cursor: default;
-				height: 64px;
-				line-height: 64px;
 				vertical-align: middle;
 				transition: all .2s;
 				color: @bluegrey500;
@@ -331,8 +329,6 @@ body {
 					content: '';
 					background-size: 100% 100%;
 					background-repeat: no-repeat;
-					width: 48px;
-					height: 48px;
 					transition: all .2s;
 				}
 
@@ -381,6 +377,16 @@ body {
 
 		.about-tags-main {
 			font-size: 24px;
+
+			.about-tag {
+				height: 64px;
+				line-height: 64px;
+
+				&::before {
+					width: 48px;
+					height: 48px;
+				}
+			}
 		}
 
 		.about-tags-sub {
@@ -393,6 +399,22 @@ body {
 				&::before {
 					width: 26px;
 					height: 26px;
+				}
+			}
+		}
+
+		@media(max-width: 760px) {
+			.about-tags {
+				font-size: 20px;
+
+				.about-tag {
+					height: 48px;
+					line-height: 48px;
+
+					&::before {
+						height: 32px;
+						line-height: 32px;
+					}
 				}
 			}
 		}
