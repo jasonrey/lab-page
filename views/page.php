@@ -37,6 +37,7 @@ class PageView extends View
 
 		$page = $this->getPages()->$slug;
 
+		$this->set('slug', $slug);
 		$this->set('page', $page);
 		$this->set('pagetitle', $page->title);
 		$this->set('pagedate', $page->date);
