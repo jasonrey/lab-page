@@ -55,16 +55,16 @@
 
 	<div class="sample-contents">
 		<div class="sample-content active">
-			<pre><?php echo $this->loadTemplate('radial-menu/codes/html'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('radial-menu/codes/html'); ?></code></pre>
 		</div>
 		<div class="sample-content">
-			<pre><?php echo $this->loadTemplate('radial-menu/codes/less-base'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('radial-menu/codes/less-base'); ?></code></pre>
 		</div>
 		<div class="sample-content">
-			<pre><?php echo $this->loadTemplate('radial-menu/codes/less-type-1'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('radial-menu/codes/less-type-1'); ?></code></pre>
 		</div>
 		<div class="sample-content">
-			<pre><?php echo $this->loadTemplate('radial-menu/codes/less-type-2'); ?></pre>
+			<pre><code><?php echo $this->loadTemplate('radial-menu/codes/less-type-2'); ?></code></pre>
 		</div>
 	</div>
 </div>

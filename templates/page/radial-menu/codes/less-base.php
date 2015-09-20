@@ -1,7 +1,7 @@
 <?php
 !defined('SERVER_EXEC') && die('No access.');
 ?>
-<code>@color: #EF5350;
+@color: #EF5350;
 @color-highlight: #D32F2F;
 @baseSize: 64px;
 
@@ -57,4 +57,4 @@
       background-color: @color-highlight;
     }
   }
-}</code>
+}
