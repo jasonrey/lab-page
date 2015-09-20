@@ -77,6 +77,7 @@
 					width: @baseSize / 2;
 					height: 2px;
 					transition: all .3s;
+					transition-delay: 150ms;
 
 					.radial-menu-toggle-line {
 						position: absolute;
@@ -86,6 +87,7 @@
 						width: 100%;
 						display: block;
 						transition: all .3s;
+						transition-delay: 150ms;
 
 						&::before {
 							content: '';
@@ -156,6 +158,11 @@
 				.radial-menu-toggle {
 					.radial-menu-toggle-lines {
 						transform: rotate(90deg);
+						transition-delay: 0s;
+
+						.radial-menu-toggle-line {
+							transition-delay: 0s;
+						}
 
 						.radial-menu-toggle-line-middle {
 							opacity: 0;
@@ -168,12 +175,14 @@
 						.radial-menu-toggle-line-top {
 							&::before {
 								transform: rotate(45deg);
+								transition-delay: 150ms;
 							}
 						}
 
 						.radial-menu-toggle-line-bottom {
 							&::before {
 								transform: rotate(-45deg);
+								transition-delay: 150ms;
 							}
 						}
 					}
