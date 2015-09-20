@@ -1,6 +1,9 @@
 'use strict'
 
 $ ->
+	# Init highlight.js
+	hljs.initHighlightingOnLoad()
+
 	$window = $ window
 	$body = $ 'body'
 	$menuButton = $ '.menu-button'
