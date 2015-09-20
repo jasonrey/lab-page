@@ -1,13 +1,13 @@
 @import 'colors';
 
-@color: @red400;
-@color-highlight: @red700;
-@baseSize: 64px;
-@itemSize: (@baseSize * 2) / 3;
-@itemOddPosition: ((@baseSize + @itemSize) / 2) + (@baseSize - @itemSize);
-@itemEvenPosition: round(sqrt(2 * pow(@itemOddPosition, 2)) / 2);
-
 #radial-menu {
+	@color: @red400;
+	@color-highlight: @red700;
+	@baseSize: 64px;
+	@itemSize: (@baseSize * 2) / 3;
+	@itemOddPosition: ((@baseSize + @itemSize) / 2) + (@baseSize - @itemSize);
+	@itemEvenPosition: round(sqrt(2 * pow(@itemOddPosition, 2)) / 2);
+
 	.radial-menus {
 		text-align: center;
 
