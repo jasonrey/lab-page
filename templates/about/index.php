@@ -14,6 +14,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="section section-intro">
 		<div class="section-background">
 			<div class="section-background-image"></div>
@@ -42,11 +43,92 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="section section-intro-2">
 		<div class="section-content">
 			<div class="container">
 				<p>People call me the <span class="highlight">"Jays"</span> of all trades.</p>
 				<p>As an Electronics Engineering student, I may not have a strict IT background, but I am a self-taught developer. Disciplined and independent, I learn as I go from projects that I have no prior knowledge. I do not believe in "by-the-book" programming. Logic is the key, while languages are secondary.</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="section section-stats">
+		<div class="section-content">
+			<div class="container">
+				<div class="stats">
+					<div class="stats-item stats-level">Lv. <?php echo $level; ?></div>
+					<div class="stats-item stats-hp">
+						<div class="stats-item-title">HP</div>
+						<div class="stats-item-bar-frame"><div class="stats-item-bar"></div></div>
+					</div>
+					<div class="stats-item stats-mp">
+						<div class="stats-item-title">MP</div>
+						<div class="stats-item-bar-frame"><div class="stats-item-bar"></div></div>
+					</div>
+					<div class="stats-item stats-exp">
+						<div class="stats-item-title">EXP</div>
+						<div class="stats-item-bar-frame"><div class="stats-item-bar" style="width: <?php echo $expPercentage; ?>%;"></div></div>
+					</div>
+				</div>
+				<div class="timeline">
+					<div class="timeline-items timeline-position">
+						<div class="timeline-item timeline-item-size-1 timeline-item-position-6">
+							<div class="timeline-item-box" data-segments="5" data-job="2">
+								<p>Section Head</p>
+							</div>
+						</div>
+						<div class="timeline-item timeline-item-size-2 timeline-item-position-4">
+							<div class="timeline-item-box" data-segments="3,4" data-job="1,2">
+								<p>Senior Developer</p>
+							</div>
+						</div>
+						<div class="timeline-item timeline-item-size-2 timeline-item-position-2">
+							<div class="timeline-item-box" data-segments="1,2" data-job="1">
+								<p>Junior Developer</p>
+							</div>
+						</div>
+						<div class="timeline-item timeline-item-size-1 timeline-item-position-1">
+							<div class="timeline-item-box" data-segments="0" data-job="0">
+								<p>System Engineer</p>
+							</div>
+						</div>
+					</div>
+					<div class="timeline-bar">
+						<div class="timeline-bar-dot"></div>
+						<div class="timeline-bar-dot"></div>
+						<div class="timeline-bar-dot"></div>
+						<div class="timeline-bar-dot"></div>
+						<div class="timeline-bar-dot"></div>
+						<div class="timeline-bar-dot"></div>
+						<div class="timeline-bar-dot"></div>
+						<div class="timeline-bar-segments">
+							<div class="timeline-bar-segment"></div>
+							<div class="timeline-bar-segment"></div>
+							<div class="timeline-bar-segment"></div>
+							<div class="timeline-bar-segment"></div>
+							<div class="timeline-bar-segment"></div>
+							<div class="timeline-bar-segment"></div>
+						</div>
+					</div>
+					<div class="timeline-items timeline-job">
+						<div class="timeline-item timeline-item-size-1 timeline-item-position-1">
+							<div class="timeline-item-box" data-segments="0" data-position="0">
+								<p>Cardos Automation</p>
+							</div>
+						</div>
+						<div class="timeline-item timeline-item-size-3 timeline-item-position-2">
+							<div class="timeline-item-box" data-segments="1,2,3" data-position="1,2">
+								<p>Stack Ideas</p>
+							</div>
+						</div>
+						<div class="timeline-item timeline-item-size-2 timeline-item-position-5">
+							<div class="timeline-item-box" data-segments="4,5" data-position="2,3">
+								<p>Compass Interactive</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
