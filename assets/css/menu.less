@@ -61,8 +61,10 @@
 			cursor: pointer;
 			transition: transform .4s;
 
-			.show-menu & {
-				transform: rotate(90deg);
+			@media (max-width: 1659px) {
+				.show-menu & {
+					transform: rotate(90deg);
+				}
 			}
 
 			.menu-button-line {
