@@ -495,7 +495,7 @@ body {
 
 					.dotsPosition(@n, @i: 1) when (@i <= @n) {
 						&:nth-child(@{i}) {
-							left: 12.5% * @i;
+							left: (100% / (@n + 1)) * @i;
 
 							@media (max-width: 760px) {
 								left: 2px;
@@ -506,9 +506,9 @@ body {
 						.dotsPosition(@n, @i + 1);
 					}
 
-					.dotsPosition(7);
+					.dotsPosition(8);
 
-					&:nth-child(7) {
+					&:nth-child(8) {
 						&::after {
 							content: 'Now';
 						}
@@ -520,11 +520,11 @@ body {
 
 					@media (max-width: 760px) {
 						width: 4px;
-						height: (96px * 8) - 32px;
+						height: (96px * 9) - 32px;
 					}
 
 					.timeline-bar-segment {
-						width: 12.5%;
+						width: 100% / 10;
 						height: 4px;
 						position: absolute;
 						top: 0;
@@ -545,7 +545,7 @@ body {
 
 						.segmentsPosition(@n, @i: 1) when (@i <= @n) {
 							&:nth-child(@{i}) {
-								left: 12.5% * @i;
+								left: (100% / 9) * @i;
 
 								@media (max-width: 760px) {
 									left: initial;
@@ -556,7 +556,7 @@ body {
 							.segmentsPosition(@n, @i + 1);
 						}
 
-						.segmentsPosition(6);
+						.segmentsPosition(8);
 					}
 				}
 			}
@@ -616,7 +616,7 @@ body {
 				.timeline-item-property(@n, @i: 1) when (@i <= @n) {
 					.timeline-item-size-@{i} {
 						.timeline-item-box {
-							width: 12.5% * @i;
+							width: (100% / 9) * @i;
 
 							@media (max-width: 760px) {
 								width: 100%;
@@ -630,7 +630,7 @@ body {
 
 					.timeline-item-position-@{i} {
 						.timeline-item-box {
-							left: 12.5% * @i;
+							left: (100% / 9) * @i;
 
 							@media (max-width: 760px) {
 								left: 0;
@@ -645,7 +645,7 @@ body {
 					.timeline-item-property(@n, @i + 1);
 				}
 
-				.timeline-item-property(6);
+				.timeline-item-property(8);
 			}
 
 			.timeline-position {
