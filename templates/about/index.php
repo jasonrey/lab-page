@@ -73,9 +73,14 @@
 				</div>
 				<div class="timeline">
 					<div class="timeline-items timeline-position">
+						<div class="timeline-item timeline-item-size-1 timeline-item-position-7">
+							<div class="timeline-item-box" data-segments="6" data-job="2">
+								<p>Tech Lead</p>
+							</div>
+						</div>
 						<div class="timeline-item timeline-item-size-1 timeline-item-position-6">
 							<div class="timeline-item-box" data-segments="5" data-job="2">
-								<p>Section Head</p>
+								<p>Web Dev Manager</p>
 							</div>
 						</div>
 						<div class="timeline-item timeline-item-size-2 timeline-item-position-4">
@@ -102,7 +107,10 @@
 						<div class="timeline-bar-dot"></div>
 						<div class="timeline-bar-dot"></div>
 						<div class="timeline-bar-dot"></div>
+						<div class="timeline-bar-dot"></div>
 						<div class="timeline-bar-segments">
+							<div class="timeline-bar-segment"></div>
+							<div class="timeline-bar-segment"></div>
 							<div class="timeline-bar-segment"></div>
 							<div class="timeline-bar-segment"></div>
 							<div class="timeline-bar-segment"></div>
@@ -122,8 +130,8 @@
 								<p>Stack Ideas</p>
 							</div>
 						</div>
-						<div class="timeline-item timeline-item-size-2 timeline-item-position-5">
-							<div class="timeline-item-box" data-segments="4,5" data-position="2,3">
+						<div class="timeline-item timeline-item-size-3 timeline-item-position-5">
+							<div class="timeline-item-box" data-segments="4,5,6" data-position="2,3,4">
 								<p>Compass Interactive</p>
 							</div>
 						</div>
